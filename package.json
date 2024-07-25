@@ -1,0 +1,47 @@
+{
+  "name": "stimulus-easepick",
+  "version": "0.1.0",
+  "description": "A Stimulus Wrapper for easepick datepicker library",
+  "keywords": [
+    "stimulus",
+    "stimulusjs",
+    "stimulus controller",
+    "calendar",
+    "datepicker",
+    "daterangepicker",
+    "easepick",
+    "components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maful/stimulus-easepick.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maful/stimulus-easepick/issues"
+  },
+  "author": "Maful Prayoga <me@maful.web.id> (https://maful.web.id/)",
+  "license": "MIT",
+  "homepage": "https://github.com/maful/stimulus-easepick",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/stimulus-easepick.umd.js",
+  "module": "dist/stimulus-easepick.mjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "vite": "^5.3.4"
+  },
+  "peerDependencies": {
+    "@easepick/bundle": "^1.2",
+    "@hotwired/stimulus": "^3"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

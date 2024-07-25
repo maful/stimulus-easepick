@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stimulus Easepick Datepicker</title>
+
+    <script type="module" defer>
+      import { Application } from "@hotwired/stimulus";
+      import Datepicker from "./src/index.js";
+
+      const application = Application.start();
+      application.register("datepicker", Datepicker);
+    </script>
+  </head>
+  <body>
+    <h1>Stimulus Easepick Datepicker</h1>
+    <div
+      data-controller="datepicker"
+      data-datepicker-format-value="D MMM YYYY"
+    >
+      <input data-datepicker-target="input" />
+    </div>
+  </body>
+</html>
