@@ -28,7 +28,11 @@
   },
   "main": "dist/stimulus-easepick.umd.js",
   "module": "dist/stimulus-easepick.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepublishOnly": "npm run build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
