@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/social-stimulus-easepick.png" width="1280" title="Social Card Stimulus Easepick Datepicker">
+</p>
+
 # Stimulus Easepick Datepicker
 
 <p align="center">
