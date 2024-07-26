@@ -5,6 +5,8 @@
   <sub>gzip: 0.60 kB<sub>
 </p>
 
+[![npm version](https://badge.fury.io/js/stimulus-easepick.svg)](https://www.npmjs.com/package/stimulus-easepick)
+
 ## Getting started
 
 Experience the power of simplicity with our lightweight, zero-dependency datepicker powered by [easepick](https://easepick.com/). This Stimulus controller wrapper brings you:
