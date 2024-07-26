@@ -11,6 +11,7 @@ export default class Datepicker extends Controller {
 		grid: { type: Number, default: 1 },
 		calendars: { type: Number, default: 1 },
 		readonly: { type: Boolean, default: false },
+		inline: { type: Boolean, default: false },
 	};
 
 	connect() {
@@ -24,6 +25,7 @@ export default class Datepicker extends Controller {
 			grid: this.gridValue,
 			calendars: this.calendarsValue,
 			readonly: this.readonlyValue,
+			inline: this.inlineValue,
 			css: [
 				"https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2/dist/index.min.css",
 			],

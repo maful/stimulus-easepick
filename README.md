@@ -65,6 +65,7 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-grid-value` | `1` | Number of calendar columns. | ❌ |
 | `data-datepicker-calendars-value` | `1` | Number of visible months. | ❌ |
 | `data-datepicker-readonly-value` | `false` | Add `readonly` attribute to `element`. | ❌ |
+| `data-datepicker-inline-value` | `false` | Show calendar inline. | ❌ |
 
 ## Contributing
 
