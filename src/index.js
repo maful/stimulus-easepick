@@ -6,6 +6,7 @@ export default class Datepicker extends Controller {
 	static values = {
 		firstDay: { type: Number, default: 1 },
 		lang: { type: String, default: "en-US" },
+		date: { type: String },
 		format: { type: String, default: "YYYY-MM-DD" },
 		grid: { type: Number, default: 1 },
 		calendars: { type: Number, default: 1 },
@@ -27,6 +28,10 @@ export default class Datepicker extends Controller {
 				"https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2/dist/index.min.css",
 			],
 		});
+
+		if (this.dateValue !== "") {
+			this.datepicker.setDate(this.dateValue);
+		}
 	}
 
 	disconnect() {

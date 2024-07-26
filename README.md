@@ -60,6 +60,7 @@ application.register("datepicker", Datepicker);
 |---|---|---|---|
 | `data-datepicker-first-day-value` | `1` | Day of start week. (0 - Sunday, 1 - Monday, etc…) | ❌ |
 | `data-datepicker-lang-value` | `en-US` | Language. This option affect to day names, month names via [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) and also affect to plural rules via [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules). | ❌ |
+| `data-datepicker-date-value` |  | Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
 | `data-datepicker-format-value` | `YYYY-MM-DD` | The default output format. See [tokens format](https://easepick.com/packages/datetime#tokens-format). | ❌ |
 | `data-datepicker-grid-value` | `1` | Number of calendar columns. | ❌ |
 | `data-datepicker-calendars-value` | `1` | Number of visible months. | ❌ |
