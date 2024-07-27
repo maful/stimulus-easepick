@@ -66,6 +66,8 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-calendars-value` | `1` | Number of visible months. | ❌ |
 | `data-datepicker-readonly-value` | `false` | Add `readonly` attribute to `element`. | ❌ |
 | `data-datepicker-inline-value` | `false` | Show calendar inline. | ❌ |
+| `data-datepicker-lock-min-date-value` |  | Lock Plugin. The minimum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
+| `data-datepicker-lock-max-date-value` |  | Lock Plugin. The maximum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
 
 ## Contributing
 
