@@ -4,11 +4,6 @@
 
 # Stimulus Easepick Datepicker
 
-<p align="center">
-  <b>A Stimulus Wrapper for easepick datepicker library</b></br>
-  <sub>gzip: 0.60 kB<sub>
-</p>
-
 [![npm version](https://badge.fury.io/js/stimulus-easepick.svg)](https://www.npmjs.com/package/stimulus-easepick)
 
 ## Getting started
