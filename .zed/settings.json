@@ -3,18 +3,14 @@
 // For a full list of overridable settings, and general information on folder-specific settings,
 // see the documentation: https://zed.dev/docs/configuring-zed#folder-specific-settings
 {
+  "language_servers": ["!eslint", "..."],
   "languages": {
     "JavaScript": {
+      "language_servers": ["biome", "!eslint", "..."],
       "code_actions_on_format": {
         "source.fixAll.biome": true,
         "source.organizeImports.biome": true
-      },
-      "language_servers": [
-        "biome",
-        "!typescript-language-server",
-        "!eslint",
-        "..."
-      ]
+      }
     }
   },
   "lsp": {
