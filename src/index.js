@@ -16,6 +16,12 @@ export default class Datepicker extends Controller {
     inline: { type: Boolean, default: false },
     lockMinDate: String,
     lockMaxDate: String,
+    enableTime: { type: Boolean, default: false },
+    timeSeconds: { type: Boolean, default: false },
+    timeStepHours: { type: Number, default: 1 },
+    timeStepMinutes: { type: Number, default: 5 },
+    timeStepSeconds: { type: Number, default: 5 },
+    timeTwelveFormat: { type: Boolean, default: false },
   };
 
   connect() {
@@ -51,6 +57,7 @@ export default class Datepicker extends Controller {
 
   setupPlugins() {
     this.setupLockPlugin();
+    this.setupTimePlugin();
   }
 
   setupLockPlugin() {
@@ -69,7 +76,27 @@ export default class Datepicker extends Controller {
     lockPlugin.onAttach();
   }
 
+  setupTimePlugin() {
+    if (!this.timePluginEnabled) return;
+
+    const timePlugin = this.datepicker.PluginManager.addInstance("TimePlugin");
+    timePlugin.options = {
+      ...timePlugin.options,
+      seconds: this.timeSecondsValue,
+      stepHours: this.timeStepHoursValue,
+      stepMinutes: this.timeStepMinutesValue,
+      stepSeconds: this.timeStepSecondsValue,
+      format12: this.timeTwelveFormatValue,
+    };
+
+    timePlugin.onAttach();
+  }
+
   get lockPluginEnabled() {
     return this.hasLockMinDateValue || this.hasLockMaxDateValue;
+  }
+
+  get timePluginEnabled() {
+    return this.enableTimeValue;
   }
 }
