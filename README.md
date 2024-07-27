@@ -56,18 +56,24 @@ application.register("datepicker", Datepicker);
 
 ## Configuration
 
-| Attribute | Default | Description | Required |
+| Attribute | Default | Type | Description |
 |---|---|---|---|
-| `data-datepicker-first-day-value` | `1` | Day of start week. (0 - Sunday, 1 - Monday, etc…) | ❌ |
-| `data-datepicker-lang-value` | `en-US` | Language. This option affect to day names, month names via [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) and also affect to plural rules via [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules). | ❌ |
-| `data-datepicker-date-value` |  | Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
-| `data-datepicker-format-value` | `YYYY-MM-DD` | The default output format. See [tokens format](https://easepick.com/packages/datetime#tokens-format). | ❌ |
-| `data-datepicker-grid-value` | `1` | Number of calendar columns. | ❌ |
-| `data-datepicker-calendars-value` | `1` | Number of visible months. | ❌ |
-| `data-datepicker-readonly-value` | `false` | Add `readonly` attribute to `element`. | ❌ |
-| `data-datepicker-inline-value` | `false` | Show calendar inline. | ❌ |
-| `data-datepicker-lock-min-date-value` |  | Lock Plugin. The minimum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
-| `data-datepicker-lock-max-date-value` |  | Lock Plugin. The maximum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). | ❌ |
+| `data-datepicker-first-day-value` | `1` | Number | Day of start week. (0 - Sunday, 1 - Monday, etc…) |
+| `data-datepicker-lang-value` | `en-US` | String | Language. This option affect to day names, month names via [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) and also affect to plural rules via [Intl.PluralRules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules). |
+| `data-datepicker-date-value` |  | String, Number | Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-format-value` | `YYYY-MM-DD` | String | The default output format. See [tokens format](https://easepick.com/packages/datetime#tokens-format). |
+| `data-datepicker-grid-value` | `1` | Number | Number of calendar columns. |
+| `data-datepicker-calendars-value` | `1` | Number | Number of visible months. |
+| `data-datepicker-readonly-value` | `false` | Boolean | Add `readonly` attribute to `element`. |
+| `data-datepicker-inline-value` | `false` | Boolean | Show calendar inline. |
+| `data-datepicker-lock-min-date-value` |  | String, Number | Lock Plugin. The minimum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-lock-max-date-value` |  | String, Number | Lock Plugin. The maximum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-enable-time-value` | `false` | Boolean | Enable Time Plugin. |
+| `data-datepicker-time-seconds-value` | `false` | Boolean | Enable seconds picker. |
+| `data-datepicker-time-step-hours-value` | `1` | Number | Step for hours. |
+| `data-datepicker-time-step-minutes-value` | `5` | Number | Step for minutes. |
+| `data-datepicker-time-step-seconds-value` | `5` | Number | Step for seconds. |
+| `data-datepicker-time-twelve-format-value` | `false` | Boolean | Display 12H time. |
 
 ## Contributing
 
