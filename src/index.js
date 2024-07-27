@@ -1,5 +1,7 @@
-import { easepick } from "@easepick/bundle";
+import * as easepick from "@easepick/bundle";
 import { Controller } from "@hotwired/stimulus";
+
+window.easepick = easepick;
 
 export default class Datepicker extends Controller {
   static targets = ["input"];
@@ -12,6 +14,8 @@ export default class Datepicker extends Controller {
     calendars: { type: Number, default: 1 },
     readonly: { type: Boolean, default: false },
     inline: { type: Boolean, default: false },
+    lockMinDate: String,
+    lockMaxDate: String,
   };
 
   connect() {
@@ -31,13 +35,41 @@ export default class Datepicker extends Controller {
       ],
     });
 
+    this.setupPlugins();
+
     if (this.dateValue !== "") {
       this.datepicker.setDate(this.dateValue);
     }
+
+    this.datepicker.renderAll();
   }
 
   disconnect() {
     this.datepicker.destroy();
     this.datepicker = undefined;
+  }
+
+  setupPlugins() {
+    this.setupLockPlugin();
+  }
+
+  setupLockPlugin() {
+    if (!this.lockPluginEnabled) return;
+
+    const lockPlugin = this.datepicker.PluginManager.addInstance("LockPlugin");
+
+    if (this.hasLockMinDateValue && this.lockMinDateValue !== "") {
+      lockPlugin.options.minDate = this.lockMinDateValue;
+    }
+
+    if (this.hasLockMaxDateValue && this.lockMaxDateValue !== "") {
+      lockPlugin.options.maxDate = this.lockMaxDateValue;
+    }
+
+    lockPlugin.onAttach();
+  }
+
+  get lockPluginEnabled() {
+    return this.hasLockMinDateValue || this.hasLockMaxDateValue;
   }
 }
