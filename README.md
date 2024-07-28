@@ -69,6 +69,12 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-time-step-minutes-value` | `5` | Number | Step for minutes. |
 | `data-datepicker-time-step-seconds-value` | `5` | Number | Step for seconds. |
 | `data-datepicker-time-twelve-format-value` | `false` | Boolean | Display 12H time. |
+| `data-datepicker-enable-amp-value` | `false` | Boolean | Enable Amp Plugin. |
+| `data-datepicker-amp-reset-button-value` | `false` | Boolean | Adds a reset button to clear the current selection. |
+| `data-datepicker-amp-months-value` | `false` | Boolean | Enable the months dropdown in the calendar. |
+| `data-datepicker-amp-years-value` | `false` | Boolean | Enable the years dropdown in the calendar. |
+| `data-datepicker-amp-min-year-value` | `1950` | Number | The minimum year that can be selected in the dropdown. |
+| `data-datepicker-amp-max-year-value` | `null` | Number | The maximum year that can be selected in the dropdown. |
 
 ## Contributing
 
