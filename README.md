@@ -75,6 +75,11 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-amp-years-value` | `false` | Boolean | Enable the years dropdown in the calendar. |
 | `data-datepicker-amp-min-year-value` | `1950` | Number | The minimum year that can be selected in the dropdown. |
 | `data-datepicker-amp-max-year-value` | `null` | Number | The maximum year that can be selected in the dropdown. |
+| `data-datepicker-enable-range-value` | `false` | Boolean | Enable Range Plugin. |
+| `data-datepicker-range-delimiter-value` | ` - ` | String | Delimiter between dates. |
+| `data-datepicker-range-tooltip-value` | `true` | Boolean | Showing tooltip with how many days will be selected. |
+| `data-datepicker-range-start-date-value` | `null` | String, Number | Preselect start date. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-range-end-date-value` | `null` | String, Number | Preselect end date. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
 
 ## Contributing
 

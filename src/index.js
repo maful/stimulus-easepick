@@ -28,6 +28,11 @@ export default class Datepicker extends Controller {
     ampMinYear: { type: Number, default: 1950 },
     ampMaxYear: { type: Number, default: null },
     ampResetButton: { type: Boolean, default: false },
+    enableRange: { type: Boolean, default: false },
+    rangeStartDate: { type: String, default: null },
+    rangeEndDate: { type: String, default: null },
+    rangeDelimiter: { type: String, default: " - " },
+    rangeTooltip: { type: Boolean, default: true },
   };
 
   connect() {
@@ -65,6 +70,7 @@ export default class Datepicker extends Controller {
     this.setupLockPlugin();
     this.setupTimePlugin();
     this.setupAmpPlugin();
+    this.setupRangePlugin();
   }
 
   setupLockPlugin() {
@@ -115,6 +121,28 @@ export default class Datepicker extends Controller {
     ampPlugin.onAttach();
   }
 
+  setupRangePlugin() {
+    if (!this.rangePluginEnabled) return;
+
+    const rangePlugin =
+      this.datepicker.PluginManager.addInstance("RangePlugin");
+    rangePlugin.options = {
+      ...rangePlugin.options,
+      delimiter: this.rangeDelimiterValue,
+      tooltip: this.rangeTooltipValue,
+    };
+
+    if (this.rangeStartDateValue !== "") {
+      rangePlugin.setStartDate(this.rangeStartDateValue);
+    }
+
+    if (this.rangeEndDateValue !== "") {
+      rangePlugin.setEndDate(this.rangeEndDateValue);
+    }
+
+    rangePlugin.onAttach();
+  }
+
   get lockPluginEnabled() {
     return this.hasLockMinDateValue || this.hasLockMaxDateValue;
   }
@@ -125,5 +153,9 @@ export default class Datepicker extends Controller {
 
   get ampPluginEnabled() {
     return this.enableAmpValue;
+  }
+
+  get rangePluginEnabled() {
+    return this.enableRangeValue;
   }
 }
