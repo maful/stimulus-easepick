@@ -22,6 +22,12 @@ export default class Datepicker extends Controller {
     timeStepMinutes: { type: Number, default: 5 },
     timeStepSeconds: { type: Number, default: 5 },
     timeTwelveFormat: { type: Boolean, default: false },
+    enableAmp: { type: Boolean, default: false },
+    ampMonths: { type: Boolean, default: false },
+    ampYears: { type: Boolean, default: false },
+    ampMinYear: { type: Number, default: 1950 },
+    ampMaxYear: { type: Number, default: null },
+    ampResetButton: { type: Boolean, default: false },
   };
 
   connect() {
@@ -58,6 +64,7 @@ export default class Datepicker extends Controller {
   setupPlugins() {
     this.setupLockPlugin();
     this.setupTimePlugin();
+    this.setupAmpPlugin();
   }
 
   setupLockPlugin() {
@@ -92,11 +99,31 @@ export default class Datepicker extends Controller {
     timePlugin.onAttach();
   }
 
+  setupAmpPlugin() {
+    if (!this.ampPluginEnabled) return;
+
+    const ampPlugin = this.datepicker.PluginManager.addInstance("AmpPlugin");
+    ampPlugin.options.dropdown = {
+      ...ampPlugin.options.dropdown,
+      months: this.ampMonthsValue,
+      years: this.ampYearsValue,
+      maxYear: this.ampMaxYearValue,
+      minYear: this.ampMinYearValue,
+    };
+    ampPlugin.options.resetButton = this.ampResetButtonValue;
+
+    ampPlugin.onAttach();
+  }
+
   get lockPluginEnabled() {
     return this.hasLockMinDateValue || this.hasLockMaxDateValue;
   }
 
   get timePluginEnabled() {
     return this.enableTimeValue;
+  }
+
+  get ampPluginEnabled() {
+    return this.enableAmpValue;
   }
 }
