@@ -80,6 +80,8 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-range-tooltip-value` | `true` | Boolean | Showing tooltip with how many days will be selected. |
 | `data-datepicker-range-start-date-value` | `null` | String, Number | Preselect start date. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
 | `data-datepicker-range-end-date-value` | `null` | String, Number | Preselect end date. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-enable-preset-value` | `false` | Boolean | Enable Preset Plugin. Range plugin must be enabled. |
+| `data-datepicker-preset-position-value` | `left` | String | Position of preset block (`left`, `right`, `top`, or `bottom`). |
 
 ## Contributing
 

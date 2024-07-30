@@ -29,11 +29,15 @@ export default class Datepicker extends Controller {
     ampMaxYear: { type: Number, default: null },
     ampResetButton: { type: Boolean, default: false },
     enableRange: { type: Boolean, default: false },
-    rangeStartDate: { type: String, default: null },
-    rangeEndDate: { type: String, default: null },
+    rangeStartDate: String,
+    rangeEndDate: String,
     rangeDelimiter: { type: String, default: " - " },
     rangeTooltip: { type: Boolean, default: true },
+    enablePreset: { type: Boolean, default: false },
+    presetPosition: { type: String, default: "left" },
   };
+
+  #presetPositions = ["top", "left", "right", "bottom"];
 
   connect() {
     const element = this.hasInputTarget ? this.inputTarget : this.element;
@@ -71,6 +75,7 @@ export default class Datepicker extends Controller {
     this.setupTimePlugin();
     this.setupAmpPlugin();
     this.setupRangePlugin();
+    this.setupPresetPlugin();
   }
 
   setupLockPlugin() {
@@ -143,6 +148,34 @@ export default class Datepicker extends Controller {
     rangePlugin.onAttach();
   }
 
+  setupPresetPlugin() {
+    if (!this.presetPluginEnabled) return;
+
+    if (this.rangePluginEnabled) {
+      this.datepicker.options.plugins = [
+        ...this.datepicker.options.plugins,
+        "RangePlugin",
+      ];
+    } else {
+      console.warn("[stimulus-easepick] Range plugin must be enabled.");
+      return;
+    }
+
+    if (!this.#presetPositions.includes(this.presetPositionValue)) {
+      console.warn("[stimulus-easepick] Preset position is not valid.");
+      return;
+    }
+
+    const presetPlugin =
+      this.datepicker.PluginManager.addInstance("PresetPlugin");
+    presetPlugin.options = {
+      ...presetPlugin.options,
+      position: this.presetPositionValue,
+    };
+
+    presetPlugin.onAttach();
+  }
+
   get lockPluginEnabled() {
     return this.hasLockMinDateValue || this.hasLockMaxDateValue;
   }
@@ -157,5 +190,9 @@ export default class Datepicker extends Controller {
 
   get rangePluginEnabled() {
     return this.enableRangeValue;
+  }
+
+  get presetPluginEnabled() {
+    return this.enablePresetValue;
   }
 }
