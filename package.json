@@ -1,6 +1,6 @@
 {
   "name": "stimulus-easepick",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A Stimulus Wrapper for easepick datepicker library",
   "keywords": [
     "stimulus",
