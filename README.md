@@ -61,8 +61,13 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-calendars-value` | `1` | Number | Number of visible months. |
 | `data-datepicker-readonly-value` | `false` | Boolean | Add `readonly` attribute to `element`. |
 | `data-datepicker-inline-value` | `false` | Boolean | Show calendar inline. |
+| `data-datepicker-enable-lock-value` | `false` | Boolean | Enable Lock Plugin. |
 | `data-datepicker-lock-min-date-value` |  | String, Number | Lock Plugin. The minimum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
 | `data-datepicker-lock-max-date-value` |  | String, Number | Lock Plugin. The maximum date that can be selected. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
+| `data-datepicker-lock-select-backward-value` | `false` | Boolean | Lock Plugin. Select second date before the first selected date. |
+| `data-datepicker-lock-select-forward-value` | `false` | Boolean | Lock Plugin. Select second date after the first selected date. |
+| `data-datepicker-lock-min-days-value` | `null` | Number | Lock Plugin. The minimum days of the selected range. |
+| `data-datepicker-lock-max-days-value` | `null` | Number | Lock Plugin. The maximum days of the selected range. |
 | `data-datepicker-enable-time-value` | `false` | Boolean | Enable Time Plugin. |
 | `data-datepicker-time-seconds-value` | `false` | Boolean | Enable seconds picker. |
 | `data-datepicker-time-step-hours-value` | `1` | Number | Step for hours. |
