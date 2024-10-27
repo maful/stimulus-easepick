@@ -19,6 +19,8 @@ export default class Datepicker extends Controller {
     lockMaxDate: String,
     lockSelectForward: { type: Boolean, default: false },
     lockSelectBackward: { type: Boolean, default: false },
+    lockMinDays: Number,
+    lockMaxDays: Number,
     enableTime: { type: Boolean, default: false },
     timeSeconds: { type: Boolean, default: false },
     timeStepHours: { type: Number, default: 1 },
@@ -92,6 +94,14 @@ export default class Datepicker extends Controller {
 
     if (this.hasLockMaxDateValue && this.lockMaxDateValue !== "") {
       lockPlugin.options.maxDate = this.lockMaxDateValue;
+    }
+
+    if (this.hasLockMaxDaysValue && !Number.isNaN(this.lockMaxDaysValue)) {
+      lockPlugin.options.maxDays = this.lockMaxDaysValue;
+    }
+
+    if (this.hasLockMinDaysValue && !Number.isNaN(this.lockMinDaysValue)) {
+      lockPlugin.options.minDays = this.lockMinDaysValue;
     }
 
     lockPlugin.options.selectForward = this.lockSelectForwardValue;
