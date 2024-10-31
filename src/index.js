@@ -40,6 +40,9 @@ export default class Datepicker extends Controller {
     rangeTooltip: { type: Boolean, default: true },
     enablePreset: { type: Boolean, default: false },
     presetPosition: { type: String, default: "left" },
+    enableKbd: { type: Boolean, default: false },
+    kbdUnitIndex: { type: Number, default: 1 },
+    kbdDayIndex: { type: Number, default: 2 },
   };
 
   #presetPositions = ["top", "left", "right", "bottom"];
@@ -81,6 +84,7 @@ export default class Datepicker extends Controller {
     this.setupAmpPlugin();
     this.setupRangePlugin();
     this.setupPresetPlugin();
+    this.setupKbdPlugin();
   }
 
   setupLockPlugin() {
@@ -192,6 +196,24 @@ export default class Datepicker extends Controller {
     presetPlugin.onAttach();
   }
 
+  setupKbdPlugin() {
+    if (!this.kbdPluginEnabled) return;
+
+    const kbdPlugin = this.datepicker.PluginManager.addInstance("KbdPlugin");
+
+    if (this.hasKbdDayIndexValue && Number.isInteger(this.kbdDayIndexValue)) {
+      kbdPlugin.options.dayIndex = this.kbdDayIndexValue;
+    }
+
+    if (this.hasKbdUnitIndexValue && Number.isInteger(this.kbdUnitIndexValue)) {
+      kbdPlugin.options.unitIndex = this.kbdUnitIndexValue;
+    }
+
+    console.log(kbdPlugin.options);
+
+    kbdPlugin.onAttach();
+  }
+
   get lockPluginEnabled() {
     return this.enableLockValue;
   }
@@ -210,5 +232,9 @@ export default class Datepicker extends Controller {
 
   get presetPluginEnabled() {
     return this.enablePresetValue;
+  }
+
+  get kbdPluginEnabled() {
+    return this.enableKbdValue;
   }
 }

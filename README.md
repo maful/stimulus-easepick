@@ -87,6 +87,9 @@ application.register("datepicker", Datepicker);
 | `data-datepicker-range-end-date-value` | `null` | String, Number | Preselect end date. Unix Timestamp (with milliseconds) or String (must satisfy the option `format`). |
 | `data-datepicker-enable-preset-value` | `false` | Boolean | Enable Preset Plugin. Range plugin must be enabled. |
 | `data-datepicker-preset-position-value` | `left` | String | Position of preset block (`left`, `right`, `top`, or `bottom`). |
+| `data-datepicker-enable-kbd-value` | `false` | Boolean | Enable Keyboard Plugin. |
+| `data-datepicker-kbd-unit-index-value` | `1` | Number | `tabIndex` for elements except days elements. |
+| `data-datepicker-kbd-day-index-value` | `2` | Number | `tabIndex` for days elements. |
 
 ## Contributing
 
